@@ -168,7 +168,7 @@ function App() {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg"
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20"
           >
             <span className="text-gray-300 text-xl ">Precio tienda</span>{" "}
             <span className="text-gray-300 font-bold text-lg">
