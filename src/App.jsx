@@ -9,6 +9,7 @@ function App() {
   // const [iva, setIVA] = useState(0);
   const [costo, setCosto] = useState("");
   const [ganancias, setGanancias] = useState({
+    30: 0,
     25: 0,
     20: 0,
     15: 0,
@@ -21,6 +22,7 @@ function App() {
     setCosto("");
     setItems("");
     setGanancias({
+      30: 0,
       25: 0,
       20: 0,
       15: 0,
@@ -55,6 +57,7 @@ function App() {
     console.log(valor);
 
     const gananciasCalculadas = {
+      30: valor / 0.7692,
       25: valor / 0.8,
       20: valor / 0.833,
       15: valor / 0.8695,
@@ -71,7 +74,7 @@ function App() {
           Calculadora de IVA y Ganancias
         </h1>
 
-        <form className="col-[1] grid grid-cols-[2fr_1fr] gap-2 p-2">
+        <form className="col-[1] grid grid-cols-[2fr_1fr] gap-4 p-2">
           <label className="place-self-end items-center sm:place-self-end text-gray-200 text-lg sm:text-xl capitalize font-semibold">
             Valor del producto:
           </label>
@@ -97,7 +100,7 @@ function App() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-purple-900 w-[10rem] p-4 place-self-center shadow-xl text-gray-200 uppercase font-bold mt-6 rounded-xl"
+            className="bg-purple-900 w-[10rem] p-4 place-self-center shadow-xl text-gray-200 uppercase sm:ml-14 font-bold mt-6 rounded-xl"
             onClick={costoConIva}
           >
             Costo
@@ -123,7 +126,7 @@ function App() {
         </div>
       </section>
       {/* <button onClick={calcularIVA}>Calcular IVA (12%)</button> */}
-      <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-[1fr_3fr] sm:mt-10 ">
+      <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-[1fr_3fr]  ">
         <div className="flex flex-col place-items-center sm:place-items-end pt-5">
           <h2 className=" text-gray-200 text-3xl ">Precio de Venta</h2>
           <motion.button
@@ -148,7 +151,20 @@ function App() {
         {/* 
       <p>IVA (12%): {iva}</p> */}
 
-        <ul className="px-5 mt-4 sm:mt-[3.5rem] flex gap-5 flex-wrap justify-center sm:justify-normal items-center">
+        <ul className="px-5 mt-4 sm:mt-[5rem] flex gap-5 flex-wrap justify-center sm:justify-normal items-center">
+        <motion.li
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20"
+          >
+            <span className="text-gray-300 text-xl ">Precio tienda</span>{" "}
+            <span className="text-gray-300 font-bold text-lg">
+              <span className="font-medium">Ganancia</span> 30%
+            </span>
+            <span className="text-gray-200 font-bold text-3xl">
+              ${ganancias["30"].toFixed(2)}
+            </span>
+          </motion.li>
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -193,7 +209,7 @@ function App() {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg"
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20"
           >
             <span className="text-gray-300 text-xl ">Precio bulto</span>{" "}
             <span className="text-gray-300 font-bold text-lg">
@@ -219,15 +235,15 @@ function App() {
           </motion.li>
         </ul>
         <motion.footer whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <p className="text-gray-200/30 px-4 py-2">
-            Programado por :
+          <p className="text-gray-200/30 px-4">
+            Desarrollado por :
             <a
               className="font-bold text-gray-100/50 underline"
               href="https://portfoliodiegodev.netlify.app/"
               target="_blank"
             >
               {" "}
-              Diego dev 👽
+              Diego dev👽
             </a>
           </p>
         </motion.footer>
