@@ -46,7 +46,7 @@ function App() {
 
   const costoConIva = (e) => {
     e.preventDefault();
-    const costoCalculado = parseFloat(valorProducto) * 0.12;
+    const costoCalculado = parseFloat(valorProducto) * 0.15;
     const valor = parseFloat(valorProducto) + costoCalculado;
     const itemsValor = valor / parseFloat(items);
     setCosto(itemsValor.toFixed(2));
@@ -68,7 +68,7 @@ function App() {
   };
 
   return (
-    <main className="min-w-screen min-h-screen bg-gradient-to-r from-[#20002c] to-[#cbb4d4] grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2">
+    <main className="min-w-screen min-h-screen bg-gradient-to-r from-[#20002c] to-[#c5b3cc] grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2">
       <section className="flex flex-col gap-8 p-4">
         <h1 className="text-2xl -pt-16 sm:pt-4 sm:text-5xl text-gray-200 uppercase text-center font-bold">
           Calculadora de IVA y Ganancias
@@ -122,7 +122,11 @@ function App() {
       </section>
       <section className="flex justify-center sm:justify-end col-[1] sm:col-auto row-[1] sm:row-auto">
         <div className="-mt-5">
-          <img className="w-[12rem] sm:w-[20rem]" src="images/fondo.png" alt="" />
+          <img
+            className="w-[12rem] sm:w-[20rem]"
+            src="images/fondo.png"
+            alt=""
+          />
         </div>
       </section>
       {/* <button onClick={calcularIVA}>Calcular IVA (12%)</button> */}
@@ -152,10 +156,10 @@ function App() {
       <p>IVA (12%): {iva}</p> */}
 
         <ul className="px-5 mt-4 sm:mt-[5rem] flex gap-5 flex-wrap justify-center sm:justify-normal items-center">
-        <motion.li
+          <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20"
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20 cursor-pointer"
           >
             <span className="text-gray-300 text-xl ">Precio tienda</span>{" "}
             <span className="text-gray-300 font-bold text-lg">
@@ -168,7 +172,7 @@ function App() {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20"
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20 cursor-pointer"
           >
             <span className="text-gray-300 text-xl ">Precio tienda</span>{" "}
             <span className="text-gray-300 font-bold text-lg">
@@ -181,7 +185,7 @@ function App() {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg"
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg cursor-pointer"
           >
             <span className="text-gray-300 text-xl ">Precio tienda</span>{" "}
             <span className="text-gray-300 font-bold text-lg">
@@ -195,7 +199,7 @@ function App() {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg"
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg cursor-pointer"
           >
             <span className="text-gray-300 text-xl ">Precio tienda</span>{" "}
             <span className="text-gray-300 font-bold text-lg">
@@ -209,7 +213,7 @@ function App() {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20"
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg hover:bg-purple-500/20 cursor-pointer"
           >
             <span className="text-gray-300 text-xl ">Precio bulto</span>{" "}
             <span className="text-gray-300 font-bold text-lg">
@@ -223,7 +227,7 @@ function App() {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg"
+            className="w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-4 bg-gray-400/10 rounded-xl shadow-lg cursor-pointer"
           >
             <span className="text-gray-300 text-xl ">Precio bulto</span>{" "}
             <span className="text-gray-300 font-bold text-lg">
@@ -234,7 +238,7 @@ function App() {
             </span>
           </motion.li>
         </ul>
-        <motion.footer whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <motion.footer whileHover={{ scale: 1 }} whileTap={{ scale: 0.6 }}>
           <p className="text-gray-200/30 px-4">
             Desarrollado por :
             <a
